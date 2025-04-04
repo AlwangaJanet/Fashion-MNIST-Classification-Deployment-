@@ -1,0 +1,29 @@
+# Ignore Python virtual environment
+janet/
+
+# Ignore Python compiled files
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore Flask cache and temp files
+instance/
+*.log
+*.sqlite3
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore VS Code and PyCharm settings
+.vscode/
+.idea/
+
+# Ignore environment variables (security reasons)
+.env
+*.env
+config.json
+secrets.json

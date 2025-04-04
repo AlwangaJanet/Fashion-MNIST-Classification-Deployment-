@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fashion MNIST Classifier</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Fashion Item Classifier</h1>
+      <p>Upload a fashion item image and see if the CNN can recognize it!</p>
+    </header>
+    
+    <div class="content">
+      <div class="upload-section">
+        <input type="file" id="upload-input" accept="image/*" />
+        <img id="preview" src="" alt="Image Preview" class="preview-image" style="display:none;" />
+        <div class="button-group">
+          <button id="clear-button">Clear Upload</button>
+          <button id="predict-button">Predict</button>
+        </div>
+      </div>
+      
+      <div class="results-section">
+        <div id="loading" class="hidden">
+          <div class="spinner"></div>
+          <p>Processing...</p>
+        </div>
+        
+        <div id="result-container" class="hidden">
+          <h2>Prediction Results</h2>
+          <div class="main-prediction">
+            <p>It's a <span id="predicted-class">...</span>!</p>
+            <p>Confidence: <span id="confidence">...</span>%</p>
+          </div>
+          
+          <div class="other-predictions">
+            <h3>Other possibilities:</h3>
+            <ul id="top-predictions"></ul>
+          </div>
+        </div>
+        
+        <div class="example-container">
+          <h3>Examples of Fashion MNIST Images</h3>
+          <div class="examples">
+            <div class="example-item">
+              <div class="example-image" id="tshirt"></div>
+              <p>T-shirt/Top</p>
+            </div>
+            <div class="example-item">
+              <div class="example-image" id="trouser"></div>
+              <p>Trouser</p>
+            </div>
+            <div class="example-item">
+              <div class="example-image" id="pullover"></div>
+              <p>Pullover</p>
+            </div>
+            <div class="example-item">
+              <div class="example-image" id="dress"></div>
+              <p>Dress</p>
+            </div>
+            <div class="example-item">
+              <div class="example-image" id="coat"></div>
+              <p>Coat</p>
+            </div>
+            <div class="example-item">
+              <div class="example-image" id="sandal"></div>
+              <p>Sandal</p>
+            </div>
+            <div class="example-item">
+              <div class="example-image" id="shirt"></div>
+              <p>Shirt</p>
+            </div>
+            <div class="example-item">
+              <div class="example-image" id="sneaker"></div>
+              <p>Sneaker</p>
+            </div>
+            <div class="example-item">
+              <div class="example-image" id="bag"></div>
+              <p>Bag</p>
+            </div>
+            <div class="example-item">
+              <div class="example-image" id="ankle-boot"></div>
+              <p>Ankle Boot</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- <div class="model-info">
+      <h3>About the Model</h3>
+      <p>This application uses a Convolutional Neural Network (CNN) trained on the Fashion MNIST dataset, which contains 70,000 grayscale images of 10 categories of clothing items.</p>
+      <div class="charts">
+        <img src="{{ url_for('static', filename='training_history.png') }}" alt="Training History" />
+        <img src="{{ url_for('static', filename='test_examples.png') }}" alt="Test Examples" />
+      </div>
+    </div>
+    
+    <footer>
+      <p>Created with TensorFlow, Flask and love for ML!</p>
+    </footer> -->
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html
